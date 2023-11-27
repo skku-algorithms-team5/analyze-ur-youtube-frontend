@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('daisyui')],
+  daisyui: {
+    themes: ['pastel'],
+  },
 };
 export default config;
