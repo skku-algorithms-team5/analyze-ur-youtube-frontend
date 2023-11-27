@@ -17,7 +17,7 @@ export function LandingPage() {
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-500">
                 Analyze Your YouTube Video.
               </h1>
-              <p className="max-w-[600px] text-zinc-950 md:text-xl dark:text-zinc-100 mx-auto">
+              <p className="max-w-[600px] text-zinc-950 md:text-xl  mx-auto">
                 Enter your YouTube video URL and get a detailed analysis.
               </p>
             </div>
@@ -32,7 +32,7 @@ export function LandingPage() {
                   Analyze
                 </Button>
               </form>
-              <p className="text-xs text-zinc-950 dark:text-zinc-100">
+              <p className="text-xs text-zinc-950">
                 Get ready to analyze your YouTube video.
               </p>
             </div>
