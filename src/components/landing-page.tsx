@@ -28,7 +28,7 @@ export function LandingPage() {
                   placeholder="Enter your YouTube video URL"
                   type="url"
                 />
-                <Button className="bg-white text-black" type="submit">
+                <Button className="bg-zinc-50 text-black" type="submit">
                   Analyze
                 </Button>
               </form>
