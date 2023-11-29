@@ -7,13 +7,12 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export function LandingPage(props: { onVideoId: (videoId: string) => void }) {
+export function LandingPage(props: { onVideoUrl: (videoId: string) => void }) {
   const [videoUrl, setVideoUrl] = useState<string>('');
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let videoId = videoUrl.split('v=')[1];
-    props.onVideoId(videoId);
+    props.onVideoUrl(videoUrl);
   };
 
   return (
