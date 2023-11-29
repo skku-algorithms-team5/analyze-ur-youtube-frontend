@@ -9,9 +9,9 @@ const AnalysisCard = ({ analysis }: { analysis: string }) => {
             </div>
           </div>
           <div>
-            &nbsp;Chat GPT
+            &nbsp;AI Youtube Consultant
             <p className="text-xs text-gray-400 font-normal">
-              &nbsp;&nbsp;openai-api
+              &nbsp;&nbsp;19대장
             </p>
           </div>
         </h2>

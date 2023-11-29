@@ -1,7 +1,7 @@
 const Navbar = () => {
   const title = (
     <div className="text-xl font-serif">
-      <span className="text-3xl">A</span>nalysisy{' '}
+      <span className="text-3xl">A</span>nalyze{' '}
       <span className="text-3xl">Y</span>our <span className="text-3xl">Y</span>
       outube <span className="text-3xl">V</span>ideo
     </div>
