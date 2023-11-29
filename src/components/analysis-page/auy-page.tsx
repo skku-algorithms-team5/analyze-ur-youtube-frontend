@@ -58,7 +58,7 @@ const AuyPage = () => {
   return (
     <div className="flex flex-col bg-base-200">
       <Navbar />
-      <div className="px-20 xl:px-80">
+      <div className="px-4 lg:px-80">
         {/** 방향성 제시 */}
         <div className="m-2">
           <h1 className="h-10 leading-10 text-lg font-bold">
