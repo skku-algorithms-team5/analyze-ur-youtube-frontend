@@ -10,20 +10,16 @@ import { LoaderPage } from '@/components/loader-page';
 
 export function LandingPage() {
   return (
-    <section className="w-full h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
+    <section className="w-full h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
       {/* mx-auto option을 추가하여, 중앙으로 정렬 */}
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid gap-6 items-center">
           <div className="flex flex-col justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-500">
                 Analyze Your YouTube Video.
               </h1>
-<<<<<<< HEAD
               <p className="max-w-[600px] text-zinc-950 md:text-xl  mx-auto">
-=======
-              <p className="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto">
->>>>>>> parent of 65ed65b (hofix(fe): landing page 색깔 변경)
                 Enter your YouTube video URL and get a detailed analysis.
               </p>
             </div>
@@ -40,11 +36,7 @@ export function LandingPage() {
                   </Button>
                 </Link>
               </form>
-<<<<<<< HEAD
               <p className="text-xs text-zinc-950">
-=======
-              <p className="text-xs text-zinc-200 dark:text-zinc-100">
->>>>>>> parent of 65ed65b (hofix(fe): landing page 색깔 변경)
                 Get ready to analyze your YouTube video.
               </p>
             </div>
