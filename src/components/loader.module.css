@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+=======
+  height: 100vh;
+>>>>>>> faa161d (loadingpage)
 }
 
 .loader {
@@ -12,8 +16,12 @@
   top: -60px;
 }
 
+<<<<<<< HEAD
 .loader:before,
 .loader:after {
+=======
+.loader:before , .loader:after{
+>>>>>>> faa161d (loadingpage)
   content: '';
   border-radius: 50%;
   position: absolute;
@@ -21,24 +29,37 @@
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
 }
 .loader:after {
+<<<<<<< HEAD
   box-shadow: 0 2px 0 #ff3d00 inset;
+=======
+  box-shadow: 0 2px 0 #FF3D00 inset;
+>>>>>>> faa161d (loadingpage)
   animation: rotate 1.5s linear infinite;
 }
 
 @keyframes rotate {
+<<<<<<< HEAD
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
+=======
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+>>>>>>> faa161d (loadingpage)
 }
 
 .quote {
   font-size: 1.5rem;
   text-align: center;
   font-style: italic;
+<<<<<<< HEAD
   color: #3f3f46; /* zinc-900 색상 */
+=======
+  color: #3f3f46;  /* zinc-900 색상 */
+>>>>>>> faa161d (loadingpage)
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -50,3 +71,7 @@
 .fadeOut {
   opacity: 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> faa161d (loadingpage)
