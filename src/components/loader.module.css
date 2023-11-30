@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .loader {
@@ -13,7 +12,8 @@
   top: -60px;
 }
 
-.loader:before , .loader:after{
+.loader:before,
+.loader:after {
   content: '';
   border-radius: 50%;
   position: absolute;
@@ -21,20 +21,24 @@
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
 }
 .loader:after {
-  box-shadow: 0 2px 0 #FF3D00 inset;
+  box-shadow: 0 2px 0 #ff3d00 inset;
   animation: rotate 1.5s linear infinite;
 }
 
 @keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .quote {
   font-size: 1.5rem;
   text-align: center;
   font-style: italic;
-  color: #3f3f46;  /* zinc-900 색상 */
+  color: #3f3f46; /* zinc-900 색상 */
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -46,4 +50,3 @@
 .fadeOut {
   opacity: 0;
 }
-
