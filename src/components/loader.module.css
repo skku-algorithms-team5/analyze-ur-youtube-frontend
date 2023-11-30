@@ -4,9 +4,12 @@
   align-items: center;
   justify-content: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   height: 100vh;
 >>>>>>> faa161d (loadingpage)
+=======
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
 }
 
 .loader {
@@ -17,11 +20,16 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .loader:before,
 .loader:after {
 =======
 .loader:before , .loader:after{
 >>>>>>> faa161d (loadingpage)
+=======
+.loader:before,
+.loader:after {
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
   content: '';
   border-radius: 50%;
   position: absolute;
@@ -30,25 +38,35 @@
 }
 .loader:after {
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 0 2px 0 #ff3d00 inset;
 =======
   box-shadow: 0 2px 0 #FF3D00 inset;
 >>>>>>> faa161d (loadingpage)
+=======
+  box-shadow: 0 2px 0 #ff3d00 inset;
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
   animation: rotate 1.5s linear infinite;
 }
 
 @keyframes rotate {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
+<<<<<<< HEAD
 =======
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 >>>>>>> faa161d (loadingpage)
+=======
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
 }
 
 .quote {
@@ -56,10 +74,14 @@
   text-align: center;
   font-style: italic;
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: #3f3f46; /* zinc-900 색상 */
 =======
   color: #3f3f46;  /* zinc-900 색상 */
 >>>>>>> faa161d (loadingpage)
+=======
+  color: #3f3f46; /* zinc-900 색상 */
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
   opacity: 0;
   transition: opacity 0.5s ease;
 }
@@ -72,6 +94,9 @@
   opacity: 0;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> faa161d (loadingpage)
+=======
+>>>>>>> 174d7e8 (feat: 로딩 페이지 연결)
