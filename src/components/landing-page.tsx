@@ -5,7 +5,7 @@
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { LoaderPage } from '@/components/loader-page';
 
 export function LandingPage(props: { onVideoUrl: (videoId: string) => void }) {
   const [videoUrl, setVideoUrl] = useState<string>('');
