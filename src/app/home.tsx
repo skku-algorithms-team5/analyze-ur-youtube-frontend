@@ -7,7 +7,7 @@ import { analysisState } from '@/recoil/atom';
 
 import { LandingPage } from '@/components/landing-page';
 import AuyPage from '@/components/analysis-page/auy-page';
-import { json } from 'stream/consumers';
+import LoaderPage from '@/components/loader-page/loader-page';
 
 export default function Page() {
   const setAnalysis = useSetRecoilState(analysisState);
@@ -52,7 +52,7 @@ export default function Page() {
       {pageStatus === 'landing' ? (
         <LandingPage onVideoUrl={submitHandler} />
       ) : pageStatus === 'loading' ? (
-        <div>loading</div>
+        <LoaderPage />
       ) : (
         <AuyPage />
       )}
