@@ -7,17 +7,18 @@ import { analysisState } from '@/recoil/atom';
 
 import { LandingPage } from '@/components/landing-page';
 import AuyPage from '@/components/analysis-page/auy-page';
-import LoaderPage from '@/components/loader-page/loader-page';
 
 export default function Page() {
   const setAnalysis = useSetRecoilState(analysisState);
   const [pageStatus, setPageStatsus] = useState<string>('landing');
+  const [isLoadingModalOpen, setIsLoadingModalOpen] = useState<boolean>(false);
 
   let response;
   let result;
 
   const submitHandler = (videoUrl: string) => {
-    setPageStatsus('loading');
+    setPageStatsus('analysis');
+    setIsLoadingModalOpen(true);
     axios
       .get(`http://127.0.0.1:8000/analyze?url=${videoUrl}`)
       .then((res) => {
@@ -41,6 +42,7 @@ export default function Page() {
           repreComment: result.repre_comment,
         });
         setPageStatsus('analysis');
+        setIsLoadingModalOpen(false);
       })
       .catch((err) => {
         console.error(err);
@@ -51,10 +53,8 @@ export default function Page() {
     <>
       {pageStatus === 'landing' ? (
         <LandingPage onVideoUrl={submitHandler} />
-      ) : pageStatus === 'loading' ? (
-        <LoaderPage />
       ) : (
-        <AuyPage />
+        <AuyPage isModalOpen={isLoadingModalOpen} />
       )}
     </>
   );
