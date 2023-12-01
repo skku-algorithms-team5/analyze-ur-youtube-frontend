@@ -37,10 +37,16 @@ const LoaderPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-neutral-50">
-      <div className={'container'}>
-        <div className={'loader'}></div>
-        <p className={`"quote" ${fade ? 'fadeIn' : 'fadeOut'}`}>
+    <div className="h-full p-16">
+      <div className="flex flex-col items-center">
+        <div className="loader width-[150px] height-[150px] mb-24"></div>
+        <p
+          className={`${'text-base text-center font-mono text-[#3f3f46]'} ${
+            fade
+              ? 'transition-opacity duration-150 opacity-100'
+              : 'transition-opacity duration-150 opacity-0'
+          }`}
+        >
           {currentQuote}
         </p>
       </div>
