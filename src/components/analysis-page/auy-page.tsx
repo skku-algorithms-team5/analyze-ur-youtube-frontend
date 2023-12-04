@@ -57,6 +57,30 @@ const AuyPage = ({ isModalOpen }: { isModalOpen: boolean }) => {
       isPositive={false}
     />
   ));
+  useEffect(() => {
+    const SSE_URL =
+      'https://port-0-analyze-ur-youtube-backend-3szcb0g2blp9bp0ek.sel5.cloudtype.app/stream_analyze?url=https://www.youtube.com/watch?v=tnSUTDcKhPU';
+    let example = '';
+    const sseEventSource = new EventSource(SSE_URL, {
+      withCredentials: true,
+    });
+    sseEventSource.onopen = (event) => {
+      console.log(`SSE 연결 시작: ${event}`);
+    };
+    sseEventSource.onmessage = (event) => {
+      console.log(event.data);
+      example += event.data;
+    };
+    sseEventSource.onerror = (event) => {
+      console.log(`SSE 에러 ${event.target}`);
+      console.log(`이때까진 쌓인 데이터: ${example}`);
+      sseEventSource.close();
+    };
+    return () => {
+      sseEventSource.close();
+    };
+  }, []);
+
   return (
     <div className="flex flex-col bg-base-200">
       <Navbar />
@@ -66,6 +90,7 @@ const AuyPage = ({ isModalOpen }: { isModalOpen: boolean }) => {
         id="my_modal_7"
         className="modal-toggle"
         checked={isModalOpen}
+        readOnly
       />
       <div className="modal bg-neutral-50" role="dialog">
         <div className="modal-box w-4/5 h-[30rem]">
