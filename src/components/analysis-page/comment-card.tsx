@@ -21,7 +21,7 @@ const CommentCard = ({
   );
 
   return (
-    <div className={`card w-96 bg-base-100 shadow-xl ${className}`}>
+    <div className={`card min-w-[25.5rem] bg-base-100 shadow-xl ${className}`}>
       <div className="card-body">
         {isPositive ? positiveComment : nagativeComment}
         {/* <h2 className="card-title">{user}</h2> */}

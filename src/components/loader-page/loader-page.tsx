@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './loader-page.css';
 
-const LoaderPage = () => {
+const LoaderPage = ({ sseString }: { sseString: string }) => {
   const [currentQuote, setCurrentQuote] = useState('');
   const [fade, setFade] = useState(true); // 새로운 상태 'fade' 추가
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const quotes = [
@@ -36,12 +37,18 @@ const LoaderPage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [sseString]);
+
   return (
-    <div className="h-full p-16">
+    <div className="h-full p-4">
       <div className="flex flex-col items-center">
-        <div className="loader width-[150px] height-[150px] mb-24"></div>
+        <div className="loader width-[50px] height-[50px] mb-12"></div>
         <p
-          className={`${'text-base text-center font-mono text-[#3f3f46]'} ${
+          className={`${'text-base text-center font-mono text-[#3f3f46] mb-4 min-h-[2rem]'} ${
             fade
               ? 'transition-opacity duration-150 opacity-100'
               : 'transition-opacity duration-150 opacity-0'
@@ -49,6 +56,12 @@ const LoaderPage = () => {
         >
           {currentQuote}
         </p>
+        <div
+          className="textarea textarea-bordered w-full min-h-[12rem] max-h-[12rem] overflow-y-auto"
+          ref={scrollRef}
+        >
+          {sseString}
+        </div>
       </div>
     </div>
   );
