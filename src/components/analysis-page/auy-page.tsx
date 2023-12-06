@@ -81,29 +81,31 @@ const AuyPage = ({ videoUrl }: { videoUrl: string }) => {
     />
   ));
   // 인덱스가 홀수 인 것만 map 으로 묶음
-  const repreCommentsLine1 = analysisData.repreComments.map((comment, index) =>
-    index % 2 === 0 ? (
-      <CommentCard
-        className="mb-2 mr-2"
-        //user={comment.user}
-        comment={comment}
-        key={comment}
-        isPositive={true}
-        isRepre={true}
-      />
-    ) : null,
+  const repreCommentsLine1 = analysisData.repreComments?.map(
+    (comment, index) =>
+      index % 2 === 0 ? (
+        <CommentCard
+          className="mb-2 mr-2"
+          //user={comment.user}
+          comment={comment}
+          key={comment}
+          isPositive={true}
+          isRepre={true}
+        />
+      ) : null,
   );
-  const repreCommentsLine2 = analysisData.repreComments.map((comment, index) =>
-    index % 2 === 1 ? (
-      <CommentCard
-        className="mb-2 mr-2"
-        //user={comment.user}
-        comment={comment}
-        key={comment}
-        isPositive={true}
-        isRepre={true}
-      />
-    ) : null,
+  const repreCommentsLine2 = analysisData.repreComments?.map(
+    (comment, index) =>
+      index % 2 === 1 ? (
+        <CommentCard
+          className="mb-2 mr-2"
+          //user={comment.user}
+          comment={comment}
+          key={comment}
+          isPositive={true}
+          isRepre={true}
+        />
+      ) : null,
   );
 
   return (
