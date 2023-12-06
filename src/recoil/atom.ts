@@ -31,7 +31,7 @@ export type analysisType = {
   negRatio: number;
   analysis: string;
   advice: string;
-  repreComment: string;
+  repreComments: string[];
   posComments: string[];
   negComments: string[];
   // positiveCommentRate: number,
@@ -44,7 +44,10 @@ export const analysisState = atom<analysisType>({
     negRatio: 0.3,
     analysis: '댓글을 분석중 입니다...',
     advice: '댓글을 분석중 입니다...',
-    repreComment: '',
+    repreComments: [
+      'repre 댓글을 분석 중입니다... 1',
+      'repre 댓글을 분석 중입니다... 2',
+    ],
     posComments: [
       '긍정 댓글을 분석중 입니다... 1',
       '긍정 댓글을 분석중 입니다... 2',

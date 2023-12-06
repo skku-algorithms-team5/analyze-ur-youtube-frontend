@@ -27,28 +27,28 @@ const AuyPage = ({ videoUrl }: { videoUrl: string }) => {
       console.log(`SSE 연결 시작: ${event}`);
     };
     sseEventSource.onmessage = (event) => {
-      console.log(event.data);
+      // console.log(event.data);
       example += event.data;
       setSseString(example);
     };
     sseEventSource.onerror = (event) => {
-      console.log(`SSE 에러 ${event.target}`);
-      console.log(`이때까진 쌓인 데이터: ${example}`);
+      // console.log(`SSE 에러 ${event.target}`);
+      // console.log(`이때까진 쌓인 데이터: ${example}`);
       setIsLoading(false);
       try {
         example = example.replace('```json', '');
         example = example.replace('```', '');
-        console.log('example을 파싱한 문자열');
-        console.log(example);
+        // console.log('example을 파싱한 문자열');
+        // console.log(example);
         const result = JSON.parse(example);
         setAnalysisData({
           posRatio: result.pos_ratio,
           negRatio: result.neg_ratio,
           posComments: result.pos_comments,
           negComments: result.neg_comments,
+          repreComments: result.repre_comments,
           analysis: result.analysis,
           advice: result.advice,
-          repreComment: result.repre_comment,
         });
       } catch (err) {
         console.log(err);
@@ -67,6 +67,7 @@ const AuyPage = ({ videoUrl }: { videoUrl: string }) => {
       comment={comment}
       key={comment}
       isPositive={true}
+      isRepre={false}
     />
   ));
   const negativeComments = analysisData.negComments.map((comment) => (
@@ -76,8 +77,35 @@ const AuyPage = ({ videoUrl }: { videoUrl: string }) => {
       comment={comment}
       key={comment}
       isPositive={false}
+      isRepre={false}
     />
   ));
+  // 인덱스가 홀수 인 것만 map 으로 묶음
+  const repreCommentsLine1 = analysisData.repreComments.map((comment, index) =>
+    index % 2 === 0 ? (
+      <CommentCard
+        className="mb-2 mr-2"
+        //user={comment.user}
+        comment={comment}
+        key={comment}
+        isPositive={true}
+        isRepre={true}
+      />
+    ) : null,
+  );
+  const repreCommentsLine2 = analysisData.repreComments.map((comment, index) =>
+    index % 2 === 1 ? (
+      <CommentCard
+        className="mb-2 mr-2"
+        //user={comment.user}
+        comment={comment}
+        key={comment}
+        isPositive={true}
+        isRepre={true}
+      />
+    ) : null,
+  );
+
   return (
     <div className="flex flex-col bg-base-200">
       <Navbar />
@@ -124,6 +152,14 @@ const AuyPage = ({ videoUrl }: { videoUrl: string }) => {
         <div className="flex flex-row mx-2">
           <div>{positiveComments}</div>
           <div>{negativeComments}</div>
+        </div>
+        {/** repre 댓글 */}
+        <div className="m-2 mt-4">
+          <h1 className="h-10 leading-10 text-lg font-bold">&nbsp;추천 댓글</h1>
+        </div>
+        <div className="flex flex-row mx-2">
+          <div>{repreCommentsLine1}</div>
+          <div>{repreCommentsLine2}</div>
         </div>
       </div>
     </div>
