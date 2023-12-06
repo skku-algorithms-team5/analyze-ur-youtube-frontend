@@ -4,10 +4,12 @@ const CommentCard = ({
   className,
   comment,
   isPositive,
+  isRepre,
 }: {
   className: string;
   comment: string;
   isPositive: boolean;
+  isRepre?: boolean;
 }) => {
   const nagativeComment = (
     <div className="badge w-14 h-8 leading-8 bg-red-300 font-bold rounded-md text-base text-red-500 text-center">
@@ -19,12 +21,20 @@ const CommentCard = ({
       긍정
     </div>
   );
+  const repreCommnet = (
+    <div className="badge w-14 h-8 leading-8 bg-blue-300 font-bold rounded-md text-base text-blue-600 text-center">
+      추천
+    </div>
+  );
 
   return (
     <div className={`card min-w-[25.5rem] bg-base-100 shadow-xl ${className}`}>
       <div className="card-body">
-        {isPositive ? positiveComment : nagativeComment}
-        {/* <h2 className="card-title">{user}</h2> */}
+        {isRepre
+          ? repreCommnet
+          : isPositive
+            ? positiveComment
+            : nagativeComment}
         <p>{comment}</p>
       </div>
     </div>
